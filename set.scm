@@ -78,7 +78,7 @@
      ( (null? set1) '())
      ( (not (member? (car set1) set2)) (interset2 (cdr set1) set2))
      (else
-      (cons (car set1) (interset (cdr set1) (car set1) set2))))))
+      (cons (car set1) (interset2 (cdr set1)  set2))))))
 
 ;;dirty solution
 (define union-
@@ -96,4 +96,10 @@
      ( (member? (car set1) set2) (union+ (cdr set1) set2))
      (else
       (cons (car set1) (union+ (cdr set1) set2))))))
-     
+
+(define intersectall
+  (lambda (l-set)
+    (cond
+     ;;( (null? l-set) '())
+     ( (null? (cdr l-set)) (car l-set))
+     (else (interset (car l-set) (intersectall (cdr l-set)))))))
