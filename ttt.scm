@@ -14,8 +14,7 @@
 (define (ttt-choose position me)
   (ttt-choose (find-triples position) me))
 
-(define apprearances
-  (lambda (words string)
+
     
     
     

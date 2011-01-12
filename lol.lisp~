@@ -1,0 +1,3 @@
+(defvar *arch-enemy* nil)
+(defun pudding-eater (person)
+  (cond ( (eq person 'henry) (setf *arch-enemy* 'stupid-lisp-alien)
